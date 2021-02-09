@@ -1,0 +1,117 @@
+- Pourquoi React ?
+  Il facilite la creation d'interface utilisateur et permet de creer des interface et des 
+  composant reutilisable.
+- Ecrivez un composant React qui affiche un titre h1 avec marqué "Bonjour" suivi du nom passé en props.
+ 
+import React from "react";
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+            <h1>Bonjour<h1>
+      <div>
+    );
+  }
+}
+
+export default App;
+
+- A quoi sert une props ?
+ c'est sont des attributs que l'on appel dans le parent.
+- Quelle méthode peut on utiliser pour afficher une partie de chaque élément d'un tableau ?
+        on utilise map
+- Grace à cette méthode, completer le code suivant pour afficher le Nom et Prénom dans une balise p de chacun des apprenants
+
+```jsx
+import React from 'react';
+
+class Promo extends React.Component {
+	apprenants = [
+		{firstName: "John", lastName: "Doe"}, 
+		{firstName: "Jane", lastName: "Roe"}, 
+		{firstName: "Larry", lastName: "Loe"}
+	];
+
+	render() {
+		return (
+			<div>
+                {apprenants.map((apprenants)=>{return<nav>{apprenants.firstName}</nav>})}
+                {apprenants.map((apprenants)=>{return<nav>{apprenants.firstName}</nav>})}
+            </div>
+		);
+	}
+}
+
+export default Promo;
+```
+
+- Dans quel cas doit on utiliser un state ? Quelles sont les différences avec les props ?
+    on utilise les state pour modifier les variable
+- Comment peut on passer une information d'un parent à son enfant ? et d'un enfant à son parent ?
+     de parent vers l'enfant on utilise les props et de l'enfant vers le parent on utilise les fonctions.
+- Sur quel élément HTML peux on récuperer l'evenement onClick ?
+  dans  <input />
+- Completez le code suivant pour recuperer dans le state name, la valeur rentrer par l'utilsateur dans l'input
+
+```jsx
+import React from 'react';
+
+class Form extends React.Component {
+	constructor(props) {
+        super(props){
+            this.state={
+                name:name,
+
+            }
+        }
+			 
+	}
+
+	onChange(event) {
+				
+	}
+
+	render() {
+		return (
+			<input value={this.state.name} onChange={this.onChange} />
+		);
+	}
+}
+
+export default Form;
+```
+
+- A quoi sert une fonction de callback asynchrone ?
+   les fonction de callback nous permet de gagner en temps en ecrivant moin de code
+- Quelle est la différence entre une fonction de callback et une promesse ?
+         la différence est que:  les deux fonctions se ressemble, fonction de promesse est une fonction asynchrone 
+        callback est une fonction qui est associée a une certaine surconstance 
+- Expliquez du mieux possible le cycle de vie d'un composant React.
+- Completez le code suivant qui va chercher le pokemon suivant: [https://pokeapi.co/api/v2/pokemon/17](https://pokeapi.co/api/v2/pokemon/17) et qui affiche son nom
+
+```jsx
+import React from 'react';
+
+class Pokemon extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			name: ""
+		}
+	}
+
+	render() {
+		return (
+			<p>My pokemon is: {this.state.name}</p>
+		);
+	}
+}
+
+export default Form;
+```
+
+- Comment mettre à jour le code ci dessus pour gerer une possible erreur lors de la récupération des infos du pokémon ?
+- A quoi sert un Router ?
+  pour eviter les rechargment des pages 
+- Quels sont les 4 principaux composants d'un Router et à quoi servent ils ?
+   BrowserRouter, Route, Link, Switch
