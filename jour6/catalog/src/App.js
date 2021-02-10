@@ -93,25 +93,17 @@ class App extends React.Component {
   
     return (
               <BrowserRouter>
-                <div className="container">
-                  <div className="row">
                   <h1>titre film</h1>
                    {movies.map((movies)=>{
                      return (
                       <nav> 
-                      <ul><li><Link to={"/id"}>{movies.title}</Link></li></ul>
+                         <ul><li><Link to={"/id"}>{movies.title}</Link></li></ul>
                       </nav>
                      );
                        <Switch>
-                         <Route path="/id">
-                            {movies.title}
-                         </Route>
+                          <Route exact path="/id" component={movies.title}/>
                        </Switch>
                      })}
-                  </div>
-                  
-                </div>   
-             
               </BrowserRouter>
     );
   }
