@@ -7,10 +7,12 @@ import Weekly from "./Components/Weekly";
 import Popular from "./Components/Popular";
 import PopularBattle from "./Components/PopularBattle";
 //import "./App.css";
+//33d0ed6a66c274ae93491e7b03a8bec7 
 class App extends React.Component {
   render() {
     return (
       <BrowserRouter>
+        <div>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
@@ -18,23 +20,33 @@ class App extends React.Component {
                 <Link to="/" className="nav-link">Home</Link>
               </li>
               <li className="nav-item">
-                <Link to="/weekly" className="nav-link">Favorites</Link>
+                <Link to="/favorites" className="nav-link">Favorites</Link>
               </li>
               <li className="nav-item">
-                <Link to="/weekly-battle" className="nav-link">Weekly</Link>
+                <Link to="/weekly" className="nav-link">Weekly</Link>
               </li>
               <li className="nav-item">
-                <Link to="/popular" className="nav-link">WeeklyBattle</Link>
+                <Link to="/weeklyBattle" className="nav-link">WeeklyBattle</Link>
               </li>
               <li className="nav-item">
-                <Link to="/popular-battle" className="nav-link">Popular</Link>
+                <Link to="/popular" className="nav-link">Popular</Link>
               </li>
               <li className="nav-item">
-                <Link to="/favorites" className="nav-link">PopularBattle</Link>
+                <Link to="/popularBattle" className="nav-link">PopularBattle</Link>
               </li>
             </ul>
           </div>
         </nav>
+        <Switch>
+          <Route exact path="/" component={App}/>
+          <Route exact path="/favorites" component={Favorites}/>
+          <Route exact path="/weekly" component={Weekly}/>
+          <Route exact path="/weeklyBattle" component={WeeklyBattle}/>
+          <Route exact path="/popular" component={Popular}/>
+          <Route exact path="/popularBattle" component={PopularBattle}/>
+          
+        </Switch>
+      </div>
       </BrowserRouter>
     );
   }
