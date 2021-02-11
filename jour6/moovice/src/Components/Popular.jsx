@@ -1,5 +1,6 @@
 
 import React from "react";
+import Card from "./Card";
 
 class Popular extends React.Component {
   constructor(props){
@@ -23,13 +24,19 @@ class Popular extends React.Component {
   
   render() {
     return (
-      <div>
+     /* <div>
           <h1>Popular : les pépites du cinéma</h1>
           <h2>{this.state.movies.map((elem, index)=>{
-            {/*<p key={index}><Card film={elem.title}/></p> */}
-            return <nav>{elem.title}</nav>
+              return <nav>{elem.title}</nav>
           })}</h2>
-      </div>
+      </div>*/
+    
+      <div>
+                {this.state.movies.map((movie,index) => {
+                    return <p  key={index}><Card film={movie} /></p> 
+                }
+                )}
+     </div>
     );
   }
 }
