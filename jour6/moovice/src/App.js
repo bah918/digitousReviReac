@@ -6,6 +6,9 @@ import WeeklyBattle from "./Components/WeeklyBattle";
 import Weekly from "./Components/Weekly";
 import Popular from "./Components/Popular";
 import PopularBattle from "./Components/PopularBattle";
+import Hme from "./Components/Card";
+import Home from "./Components/Home";
+
 //import "./App.css";
 //33d0ed6a66c274ae93491e7b03a8bec7 
 class App extends React.Component {
@@ -38,7 +41,7 @@ class App extends React.Component {
           </div>
         </nav>
         <Switch>
-          <Route exact path="/" component={App}/>
+          <Route exact path="/" component={Home}/>
           <Route exact path="/favorites" component={Favorites}/>
           <Route exact path="/weekly" component={Weekly}/>
           <Route exact path="/weeklyBattle" component={WeeklyBattle}/>
@@ -51,5 +54,4 @@ class App extends React.Component {
     );
   }
 }
-
 export default App;
